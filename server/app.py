@@ -37,7 +37,7 @@ def games():
 
 @app.route('/games/<int:id>')
 def game_by_id(id):
-    game = Game.query.filter(id = id).first()
+    game = Game.query.filter(Game.id == id).first()
     game_dict = game.to_dict()
 
     response = make_response(game_dict, 200)
